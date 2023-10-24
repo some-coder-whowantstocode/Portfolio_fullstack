@@ -41,7 +41,7 @@ const Contact = () => {
 
     // Your form submission logic here
     const formData = { sender, subject, message };
-    const response = await fetch('http://localhost:9310/sendmail', {
+    const response = await fetch('https://portfolio-backend-bfn9.onrender.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

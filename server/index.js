@@ -7,7 +7,7 @@ require('dotenv').config()
 const cors = require('cors')
 
 const corsOptions ={
-  origin: 'http://localhost:5173',
+  origin: process.env.url,
   credentials: true,
   optionSuccessStatus: 200
 }
