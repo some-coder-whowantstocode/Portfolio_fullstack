@@ -8,15 +8,19 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/fiber": "^8.14.4",
+    "framer-motion": "^10.16.4",
+    "gh-pages": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-scroll": "^1.9.0",
+    "valtio": "^1.11.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -28,6 +32,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "postcss": "^8.4.30",
+    "tailwind-clip-path": "^1.0.0",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
   }

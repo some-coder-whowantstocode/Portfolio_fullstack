@@ -1,10 +1,14 @@
 import React, { useCallback, useEffect,useMemo,useRef, useState } from 'react'
+import {animateScroll as scroll} from 'react-scroll'
+import { HOME } from '../Store';
 
 const Canvas = (props) => {
   const particleArray = [];
   const Canvasref = useRef(null)
   const requestRef = useRef();
   const mouse = useRef({x:0,y:0,radius:100})
+
+  const [work,setwork] = useState(false)
 
 
 class Shape 
@@ -18,7 +22,6 @@ class Shape
        this.dy = dy;
        this.ds = ds||0;
        this.color = color
-      
        this.ctx = context
     }
 
@@ -69,7 +72,7 @@ class Shape
     }
 }  
 let lastTime = null;
-const delay = 800/60;
+const delay = 100/60;
 let wait = 0;
 
 const animate = (time) => {
@@ -108,18 +111,23 @@ function getRandomColor() {
 }
 
   useEffect(()=>{
+    if(work)
+    {
+
+    
     const handlemousemove =(e)=>{
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
       if(Canvasref.current){
         const context = Canvasref.current.getContext('2d')
+        const canvas = Canvasref.current
       for(let i=0;i<10;i++)
           {
               let s = Math.random() * (8 -4) +4
               let dx = Math.random() * (2 +1) - 1
               let dy = Math.random() * ( 2 + 2) -2
               let color = getRandomColor()
-              let shape = new Shape(context,mouse.current.x,mouse.current.y,s,dx,dy,0.4,color)
+              let shape = new Shape(context,mouse.current.x,mouse.current.y-canvas.getBoundingClientRect().top,s,dx,dy,0.4,color)
               shape.updateLine()
               particleArray.push(shape)
           }
@@ -132,7 +140,8 @@ function getRandomColor() {
     window.removeEventListener('mousemove',handlemousemove)
     cancelAnimationFrame(requestRef.current)
     }
-  },[Canvasref])
+  }
+  },[Canvasref,work])
 
   
   
@@ -164,9 +173,38 @@ function getRandomColor() {
 
     },[Canvasref])
 
+
+
+    
+    useEffect(()=>{
+
+      const handlescroll =()=>{
+
+        
+        // console.log(aboutref.current.getBoundingClientRect().top)
+  
+        HOME.start = Canvasref.current.getBoundingClientRect().top;
+        HOME.end = Canvasref.current.getBoundingClientRect().bottom;
+      }
+  
+      window.addEventListener('scroll',handlescroll)
+  
+      return ()=>{
+        window.removeEventListener('scroll',handlescroll)
+      }
+  
+    },[])
+
+
     
     
-  return <canvas ref={Canvasref} className=' h-screen w-screen bg-black'  {...props}/>
+  return <canvas
+  onMouseEnter={()=>setwork(true)}
+  onMouseLeave={()=>setwork(false)}
+   ref={Canvasref}
+    className=' h-screen w-screen max-w-fit bg-black scroll-smooth'
+    {...props}
+   />
 }
 
 export default Canvas

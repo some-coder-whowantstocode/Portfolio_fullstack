@@ -1,0 +1,29 @@
+@keyframes dash {
+    0% {
+        
+        stroke-dashoffset: 251.2;
+        stroke-dasharray: 251.2;
+    }
+   
+    100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 251.2;
+
+    }
+}
+
+@keyframes roll {
+    0%{
+        /* padding-bottom: 0px; */
+        top: 50%;
+    }
+    50%{
+        top:100%
+    }
+    75%{
+        top:0%
+    }
+    100%{
+        top: 50%;
+    }
+}
