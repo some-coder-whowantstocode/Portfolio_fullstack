@@ -6,7 +6,6 @@ const Projectinfo = ({props}) => {
   const inforef = useRef(null)
   const [visibility,setvisibility] = useState(false)
 
-  console.log(props)
   return (
 
     <>

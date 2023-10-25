@@ -26,6 +26,7 @@ export default {
       },
       height:{
         "outer":"100px",
+        simg:'160px',
         "inner":"76px",
         "pimg":"300px",
         ibox:"40px",
@@ -36,6 +37,7 @@ export default {
       },
       width:{
         "outer":"100px",
+        simg:'160px',
         "inner":"76px",
         "pimg":"300px",
         ibox:"500px",

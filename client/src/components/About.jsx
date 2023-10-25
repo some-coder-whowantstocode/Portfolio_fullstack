@@ -4,6 +4,7 @@ import Skills from '../ComponentParts/AboutComponent/Skills'
 import { AnimatePresence,delay,motion,useScroll } from 'framer-motion'
 import { Animationleft } from '../utils/Animations'
 import { ABOUT,Responsive } from '../Store'
+import Me from '../ComponentParts/AboutComponent/Me'
 
 const About = () => {
 
@@ -39,6 +40,7 @@ const About = () => {
       width > Responsive.width 
       ?
 <AnimatePresence>
+  
     <div name="target"
     ref={aboutref}
     >
@@ -51,6 +53,7 @@ const About = () => {
         >
           ABOUT
         </motion.p>
+        
         <motion.div
     {...Animationleft(-200,0,0.7)}
     // transition={{delay:1}}
@@ -58,11 +61,15 @@ const About = () => {
          className=' w-28 bg-customcol mt-3 h-1'
          ></motion.div>
         </div>
-        <div
-        className='flex items-center justify-center'>
-
-        <Skills/>
-        </div>
+        {
+          
+ <div
+ className='flex max-[983px]:flex-col items-center justify-center'>
+   <Me/>
+ <Skills/>
+ </div>
+        }
+       
     </div>
     </AnimatePresence>
 
@@ -83,8 +90,8 @@ const About = () => {
          ></div>
         </div>
         <div
-        className='flex items-center justify-center'>
-
+        className='flex-col items-center justify-center'>
+          <Me/>
         <Skills/>
         </div>
     </div>

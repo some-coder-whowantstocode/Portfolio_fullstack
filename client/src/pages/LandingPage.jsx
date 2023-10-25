@@ -18,7 +18,7 @@ const LandingPage = (props) => {
             <span className=" block animate-seff hover:animate-teff mr-3">i </span>
             
             <span className=" block animate-seff hover:animate-teff">,</span>
-            <span className=" block animate-seff hover:animate-teff ml-3 mr-3 ">i</span>
+            <span className=" block animate-seff hover:animate-teff ml-3 mr-3 ">I</span>
             <span className=" block animate-seff hover:animate-teff">a</span>
             <span className=" block animate-seff hover:animate-teff mr-3">m</span>
             <span className=" block animate-seff hover:animate-teff">R</span>

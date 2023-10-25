@@ -36,12 +36,11 @@ const Contact = () => {
  
 
   const handleSubmit = async (event) => {
-    console.log(event)
     event.preventDefault();
 
     // Your form submission logic here
     const formData = { sender, subject, message };
-    const response = await fetch('https://portfolio-backend-bfn9.onrender.com', {
+    const response = await fetch('https://portfolio-backend-bfn9.onrender.com/sendmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
