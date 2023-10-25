@@ -133,7 +133,7 @@ console.log(load)
         name='subject' 
         value={subject}
         onChange={(e)=>setSubject(e.target.value)}
-        placeholder='name'
+        placeholder='subject'
         />
         <textarea  
         className='border resize-none border-gray-700 p-1  focus:outline-none bg-transparent text-white w-ibox h-tbox' 

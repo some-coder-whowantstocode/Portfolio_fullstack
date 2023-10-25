@@ -3,7 +3,6 @@ import Project from '../ComponentParts/ProjectComponent/Project'
 import socially from '../assets/socialmedia.jfif'
 import byapar from '../assets/e-commerese.webp'
 import movie from '../assets/movie.jpg'
-import portfolio from '../assets/portfolio.jpeg'
 import { AnimatePresence,motion} from 'framer-motion'
 import { Animationleft } from '../utils/Animations'
 import { PROJECT, Responsive } from '../Store'
@@ -43,21 +42,24 @@ const Projects = () => {
         type:["FULLSTACK","ALL","REACTJS"],
         description:`
         A full-stack social media platform made with react and tailwind css . It utilizes websocket to implement chat with other users and it uses web-rtc to do video call with other users . It uses express js for backend and stores data in mongodb.
-        `
+        `,
+        link:'https://some-coder-whowantstocode.github.io/socialmedia/#/login'
       },
         {name:"byapar",
         image:byapar,
         type:["FULLSTACK","ALL","REACTJS"],
         description:`
         Byapar is a web application that I created using MongoDB, Express.js, Node.js, and React.js. It lets users search and buy and sell products, with a fast and smooth user experience. It uses REST APIs,Redux.js, and CSS to create a dynamic, interactive, and responsive web site. Byapar showcases my skills and knowledge in full-stack web development, JavaScript frameworks, and web applications.
-        `
+        `,
+        link:'https://some-coder-whowantstocode.github.io/byapar/#/login'
       },
         {name:"TMDB",
         image:movie,
         type:["FRONTEND","ALL","REACTJS"],
         description:`
         MovieDB is a web application that I created using React.js,and CSS. It lets users search and explore details related to any movie and TV series, such as genres, ratings, reviews, cast, crew, trailers, etc. It uses TMDB API to deliver a fast and smooth user experience. MovieDB showcases my skills and knowledge in front-end web development, JavaScript frameworks, and responsive web design.
-        `
+        `,
+        link:'https://some-coder-whowantstocode.github.io/tmdbclone/#/'
       },
     ]
     
@@ -185,8 +187,8 @@ const Projects = () => {
           image={a.image} 
           name={a.name} 
           isvisible={a.type.find(e=>e==current) } 
-          
           description={a.description}
+          link={a.link}
           />
         </motion.div>
       )
@@ -295,8 +297,8 @@ const Projects = () => {
           image={a.image} 
           name={a.name} 
           isvisible={a.type.find(e=>e==current) } 
-          
           description={a.description}
+          link={a.link}
           />
         </div>
       )

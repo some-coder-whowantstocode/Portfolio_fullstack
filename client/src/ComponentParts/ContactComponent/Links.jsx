@@ -12,7 +12,7 @@ const Links = () => {
 <div  className=' bg-gray-900 relative overflow-hidden h-link w-link hover:w-hlink hover:h-hlink transition-all duration-400 hover:bg-customcol group flex items-center justify-center cursor-pointer '>
   <a 
   href='https://www.facebook.com/vicky.ky.739978/'
-  target='_black'
+  target='_blank'
   >
   <FaFacebookF 
 
@@ -26,7 +26,7 @@ className='top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute text-whit
 
 <div className='w-link h-link flex items-center justify-center m-4'>
 <div  className=' bg-gray-900 relative overflow-hidden h-link w-link hover:w-hlink hover:h-hlink transition-size duration-400 hover:bg-customcol group flex items-center justify-center cursor-pointer '>
-  <a href="https://www.instagram.com/rohitbal216/" target='_black'>
+  <a href="https://www.instagram.com/rohitbal216/" target='_blank'>
 
   <BsInstagram
         className='top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute text-white w-logo h-logo group-hover:animate-roll'
@@ -41,7 +41,7 @@ className='top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute text-whit
 <div className='w-link h-link flex items-center justify-center m-4'>
 <div  className=' bg-gray-900 relative overflow-hidden h-link w-link hover:w-hlink hover:h-hlink transition-size duration-400 hover:bg-customcol group flex items-center justify-center cursor-pointer '>
   <a href="https://www.linkedin.com/in/rohit-bal-8a352b236/"
-  target='_black'
+  target='_blank'
   >
   <AiOutlineLinkedin
         className='top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute text-white w-logo h-logo group-hover:animate-roll'

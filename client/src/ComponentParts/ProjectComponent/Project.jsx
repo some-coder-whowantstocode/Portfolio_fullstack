@@ -5,9 +5,9 @@ import Projectinfo from './Projectinfo'
 import { Responsive } from '../../Store'
 
 
-const Project = ({image,name,isvisible,description}) => {
+const Project = ({image,name,isvisible,description,link}) => {
 
-
+console.log(link)
 
   return (
     <>
@@ -39,7 +39,7 @@ const Project = ({image,name,isvisible,description}) => {
          src={image} 
          alt="" 
          />
-         <Projectinfo props={{image:image,name:name,des:description}}/>
+         <Projectinfo props={{image:image,name:name,des:description,link:link}}/>
       
      </motion.div>
   
