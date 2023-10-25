@@ -1,14 +1,20 @@
 import React, { useRef,useEffect,useState } from 'react'
-import { AnimatePresence,motion } from 'framer-motion'
+import { AnimatePresence,color,motion } from 'framer-motion'
 import { Animationleft } from '../utils/Animations'
 import Links from '../ComponentParts/ContactComponent/Links'
 import { CONTACT, Responsive } from '../Store'
+import { AiOutlineLoading } from 'react-icons/ai'
+import Result from './Result'
 
 
 const Contact = () => {
     const [sender, setSender] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
+    const [load,setload] = useState(false)
+    const [rm,setrm] = useState(false)
+    const [m,setm] = useState()
+    const [mr,setmr] = useState('green')
 
     const contactref = useRef(null)
 
@@ -36,24 +42,55 @@ const Contact = () => {
  
 
   const handleSubmit = async (event) => {
+    setload(true);
     event.preventDefault();
-
-    // Your form submission logic here
+console.log(load)
     const formData = { sender, subject, message };
-    const response = await fetch('https://portfolio-backend-bfn9.onrender.com/sendmail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      console.log('Form submitted successfully');
-    } else {
-      console.log('Form submission failed');
+    if(sender=='' || subject =='' || message=='')
+    {
+      setm('Please fill all the data required.')
+      setmr('red')
+      setrm(true);
+      setload(false)
+      return;
     }
+    try{
+      const response = await fetch('https://portfolio-backend-bfn9.onrender.com/sendmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      setload(false)
+      setm('Mail deliverd successfully.')
+      setmr('green')
+      setrm(true);
+    }catch(err)
+    {
+      console.log(load)
+      setload(false)
+      setm('Mail failed to deliver.')
+      setmr('red')
+      setrm(true);
+
+    }
+    
+   
+
   };
+
+  useEffect(()=>{
+    if(rm)
+    {
+     const timer = setTimeout(() => {
+      setrm(false)
+     }, 3000);
+    return ()=> clearTimeout(timer)
+
+    }
+  
+  },[rm])
 
 
 
@@ -81,7 +118,6 @@ const Contact = () => {
      </div>
 
       <form 
-      onSubmit={handleSubmit}
       className=' flex flex-col items-center justify-center'>
         <input 
         className='border border-gray-700 p-1  focus:outline-none bg-transparent text-white w-ibox h-ibox mb-3 ' 
@@ -112,13 +148,15 @@ const Contact = () => {
 
         </textarea>
         <div className='w-ibox '>
-        <input 
-        type="submit"  
-        value="SUBMIT" 
-        className=' 
-        border border-white hover:border-customcol transition-all mt-4 duration-300 py-1 px-2 bg-transparent hover:bg-customcol mb-3 text-white float-right' 
-        />
+          <button
+          onClick={handleSubmit}
+            className=' 
+            border w-20 flex items-center justify-center border-white hover:border-customcol transition-all mt-4 duration-300 py-1 px-2 bg-transparent hover:bg-customcol mb-3 text-white float-right' 
+            >
+        { load ? <AiOutlineLoading className=' animate-spin text-white' size={20} /> : <p>SUBMIT</p>}
 
+          </button>
+      
         </div>
       </form>
       
@@ -138,7 +176,6 @@ const Contact = () => {
      </div>
 
       <form
-      onSubmit={handleSubmit}
       className=' flex flex-col items-center justify-center'>
         <input 
         style={{
@@ -180,12 +217,14 @@ const Contact = () => {
           width:`${innerWidth-50}px`
         }}
         >
-        <input 
-        type="submit"  
-        value="SUBMIT" 
-        className=' border border-white hover:border-customcol transition-all mt-4 duration-300 py-1 px-2 bg-transparent hover:bg-customcol mb-3 text-white float-right' 
-        />
+        <button
+          onClick={handleSubmit}
+            className=' 
+            border w-20 flex items-center justify-center border-white hover:border-customcol transition-all mt-4 duration-300 py-1 px-2 bg-transparent hover:bg-customcol mb-3 text-white float-right' 
+            >
+        { load ? <AiOutlineLoading className=' animate-spin text-white' size={20} /> : <p>SUBMIT</p>}
 
+          </button>
         </div>
       </form>
       
@@ -193,7 +232,7 @@ const Contact = () => {
 
     </>
       }
-    
+     { (rm && m && mr) && <Result message={m} colour={mr} />}    {/* {(rm && m && mr) && <Result} */}
     </div>
   )
 }
