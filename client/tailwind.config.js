@@ -28,7 +28,7 @@ export default {
         "outer":"100px",
         simg:'160px',
         "inner":"76px",
-        "pimg":"300px",
+        "pimg":"200px",
         ibox:"40px",
         tbox:"300px",
         link:'60px',

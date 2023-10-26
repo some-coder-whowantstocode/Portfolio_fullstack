@@ -10,7 +10,14 @@ const Projectinfo = ({props}) => {
   return (
 
     <>
-       <div
+      
+
+
+{
+  innerWidth > Responsive.width
+    ?
+        <>
+ <div
        className=' -z-0 transition-all cursor-pointer duration-200 opacity-0 text-xl font-semibold absolute left-1/2 bottom-0 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center group-hover:bottom-20 group-hover:opacity-100 border-2 px-3 py-2 border-pink-400 hover:bg-pink-300 '
        onClick={() => {
        setvisibility(true)
@@ -18,12 +25,7 @@ const Projectinfo = ({props}) => {
        >
         Learn More
        </div>
-
-
-{
-  innerWidth > Responsive.width
-    ?
-        <>
+        
         {visibility && 
           <>
          <div
@@ -78,6 +80,14 @@ const Projectinfo = ({props}) => {
           </>
   :
           <>
+           <div
+       className=' -z-0 transition-all cursor-pointer duration-200 opacity-0 text-xl font-semibold absolute left-1/2 bottom-0 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center group-hover:bottom-5 group-hover:opacity-100 border-2 px-3 py-2 border-pink-400 hover:bg-pink-300 '
+       onClick={() => {
+       setvisibility(true)
+      }}
+       >
+        Learn More
+       </div>
           {visibility && 
             <>
            <div

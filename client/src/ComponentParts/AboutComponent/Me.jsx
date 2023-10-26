@@ -1,5 +1,5 @@
 import React from 'react'
-import me from '../../assets/default.jpg'
+import me from '../../assets/me.webp'
 import { Responsive } from '../../Store'
 import { AnimatePresence,motion } from 'framer-motion'
 import { Animationleft, projectanimation } from '../../utils/Animations'
@@ -16,7 +16,7 @@ const Me = () => {
     >
       <img
       key={'i'}
-      className=' mb-4 h-pimg w-pimg  rounded-full border-8 border-customcol'
+      className=' mb-4 w-pimg '
       src={me} 
       alt="" 
       />
@@ -39,7 +39,7 @@ const Me = () => {
     className='mt-8 w-screen flex flex-col items-center justify-center'
     >
       <img
-      className=' mb-4 h-simg w-simg  rounded-full border-8 border-customcol'
+      className=' mb-4 w-simg '
       src={me} 
       alt="" 
       />

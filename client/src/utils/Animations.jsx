@@ -16,11 +16,11 @@ export const Animationbottom =(distance,delaytime,duration)=>{
     }
 }
 
-export const projectanimation = ()=>{
+export const projectanimation = (height,width)=>{
 
     return {
         initial:{scale:0.3,height:"0px",width:"0px",opacity:0},
-        animate:{scale:1,height:"300px",width:"300px",opacity:1},
+        animate:{scale:1,height:height,width:width,opacity:1},
         exit:{scale:0.3,height:"0px",width:"0px",opacity:0},
     }
 }
