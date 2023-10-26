@@ -102,7 +102,10 @@ const Projectinfo = ({props}) => {
             className=' z-40 fixed top-0 left-1/2 -translate-x-1/2 w-screen h-screen bg-white '
             >
               <div 
-              className='z-40 fixed right-10 bottom-20 font-bold text-red-600 cursor-pointer'
+              style={{
+                top:'14.5rem'
+              }}
+              className='z-40 fixed right-4 font-bold text-red-600 cursor-pointer'
               onClick={()=>{setvisibility(false)}}
               >
                 <AiOutlineClose
