@@ -60,7 +60,7 @@ console.log(link)
 
       <motion.div
       className=' h-pimg flex flex-wrap group'
-      {...projectanimation('200px','100vw')}
+      {...projectanimation('calc(100vh/3)','100vw')}
       transition={{  duration: 1}}
       style={{
         flexShrink:0
@@ -74,7 +74,10 @@ console.log(link)
            <div>{name}</div>
        </div>
        <img
-       className='-z-0 h-pimg transition-all duration-500  w-screen group-hover:opacity-0'
+       style={{
+        height:'calc(100vh/3)'
+       }}
+       className='-z-0 w-screen transition-all duration-500  group-hover:opacity-0'
        src={image} 
        alt="" 
        />
