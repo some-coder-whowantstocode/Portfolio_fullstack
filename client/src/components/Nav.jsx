@@ -187,9 +187,9 @@ const Nav = () => {
         <motion.div
         {...navanimation()}
         transition={{duration:0.2}} 
-        className=' absolute -right-2 overflow-hidden w-screen top-11 px-10 bg-neutral-900 text-white flex flex-col'
+        className=' absolute -right-5 overflow-hidden w-screen top-11 px-10 bg-neutral-900 text-white flex flex-col'
         >
-          <>
+          
           <div
           
            onClick={(e)=>{
@@ -245,7 +245,7 @@ const Nav = () => {
           ref={contactref}
           >CONTACT</p>
             </Link>
-            </>
+            
         </motion.div>
 }
         </AnimatePresence>
