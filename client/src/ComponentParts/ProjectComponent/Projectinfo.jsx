@@ -129,9 +129,11 @@ const Projectinfo = ({props}) => {
         className=' p-2'
         >{props.des}</p>
         
-        <div
+        <a
+        href={props.link}
+        target='_blank'
         className=' transition-all duration-200 border ml-4 cursor-pointer border-pink-400 hover:bg-pink-400 hover:text-white w-fit py-2 px-3'
-        >Visit Site ⇾</div>
+        >Visit Site ⇾</a>
         
             </div>
             </div>
