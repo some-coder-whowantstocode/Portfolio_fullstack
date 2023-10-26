@@ -103,9 +103,9 @@ const Projectinfo = ({props}) => {
             >
               <div 
               style={{
-                top:'14.5rem'
+                top:'calc(100vh / 2.85)'
               }}
-              className='z-40 fixed right-4 font-bold text-red-600 cursor-pointer'
+              className='z-40 fixed right-4  font-bold text-gray-600 cursor-pointer'
               onClick={()=>{setvisibility(false)}}
               >
                 <AiOutlineClose
