@@ -78,7 +78,7 @@ console.log(link)
        src={image} 
        alt="" 
        />
-       <Projectinfo props={{image:image,name:name,des:description}}/>
+       <Projectinfo props={{image:image,name:name,des:description,link:link}}/>
     
    </motion.div>
 
