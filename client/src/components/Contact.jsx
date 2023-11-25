@@ -55,7 +55,7 @@ console.log(load)
       return;
     }
     try{
-      const response = await fetch('https://portfolio-backend-bfn9.onrender.com/sendmail', {
+     await fetch('http://localhost:9310/sendmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
