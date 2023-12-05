@@ -3,6 +3,7 @@ import Project from '../ComponentParts/ProjectComponent/Project'
 import socially from '../assets/socialmedia.jfif'
 import byapar from '../assets/e-commerese.webp'
 import movie from '../assets/movie.jpg'
+import chatapp from '../assets/chat-app.jpeg'
 import { AnimatePresence,motion} from 'framer-motion'
 import { Animationleft } from '../utils/Animations'
 import { PROJECT, Responsive } from '../Store'
@@ -60,6 +61,13 @@ const Projects = () => {
         MovieDB is a web application that I created using React.js,and CSS. It lets users search and explore details related to any movie and TV series, such as genres, ratings, reviews, cast, crew, trailers, etc. It uses TMDB API to deliver a fast and smooth user experience. MovieDB showcases my skills and knowledge in front-end web development, JavaScript frameworks, and responsive web design.
         `,
         link:'https://some-coder-whowantstocode.github.io/tmdbclone/#/'
+      },
+      {name:"Instant Group",
+        image:chatapp,
+        type:["FULLSTACK","ALL","REACTJS"],
+        description:`Instant Chat is a real-time chat application that leverages the power of the MERN stack (MongoDB, Express.js, React, Node.js) and Socket.IO also it uses jest for writing test cases. One of the unique features of Instant Chat is its transient nature - it does not use a database, ensuring that no chat data persists once the session ends. This design choice prioritizes user privacy and makes each chat session a unique experience. The application allows users to create chat rooms and handles all edge cases to ensure a smooth and enjoyable user experience.
+        `,
+        link:'https://instant-chat-ay6x.onrender.com/'
       },
     ]
     
