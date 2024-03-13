@@ -5,7 +5,6 @@ import { Responsive } from '../../Store';
 const Projectinfo = ({props}) => {
   const inforef = useRef(null)
   const [visibility,setvisibility] = useState(false)
-  console.log(props)
 
   return (
 
@@ -71,6 +70,12 @@ const Projectinfo = ({props}) => {
       target='_blank'
       className=' transition-all duration-200 border ml-4 cursor-pointer border-pink-400 hover:bg-pink-400 hover:text-white w-fit py-2 px-3'
       >Visit Site ⇾</a>
+
+      <a
+        href={props.github}
+        target='_blank'
+        className=' transition-all duration-200 border ml-4 cursor-pointer border-gray-800 hover:bg-gray-800 hover:text-white w-fit py-2 px-3'
+        >Source Code ⇾</a>
       
           </div>
           </div>
@@ -134,6 +139,12 @@ const Projectinfo = ({props}) => {
         target='_blank'
         className=' transition-all duration-200 border ml-4 cursor-pointer border-pink-400 hover:bg-pink-400 hover:text-white w-fit py-2 px-3'
         >Visit Site ⇾</a>
+
+        <a
+        href={props.github}
+        target='_blank'
+        className=' transition-all duration-200 border ml-4 cursor-pointer border-gray-800 hover:bg-gray-800 hover:text-white w-fit py-2 px-3'
+        >Source Code ⇾</a>
         
             </div>
             </div>

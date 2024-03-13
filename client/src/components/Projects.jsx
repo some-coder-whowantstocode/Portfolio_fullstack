@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Project from '../ComponentParts/ProjectComponent/Project'
-import socially from '../assets/socialmedia.jfif'
-import byapar from '../assets/e-commerese.webp'
-import movie from '../assets/movie.jpg'
 import chatapp from '../assets/chat-app.jpeg'
 import { AnimatePresence,motion} from 'framer-motion'
 import { Animationleft } from '../utils/Animations'
@@ -38,36 +35,13 @@ const Projects = () => {
     },[])
 
     const PROJECTS = [
-        {name:"social.ly",
-        image:socially,
-        type:["FULLSTACK","ALL","REACTJS"],
-        description:`
-        A full-stack social media platform made with react and tailwind css . It utilizes websocket to implement chat with other users and it uses web-rtc to do video call with other users . It uses express js for backend and stores data in mongodb.
-        `,
-        link:'https://some-coder-whowantstocode.github.io/socialmedia/#/login'
-      },
-        {name:"byapar",
-        image:byapar,
-        type:["FULLSTACK","ALL","REACTJS"],
-        description:`
-        Byapar is a web application that I created using MongoDB, Express.js, Node.js, and React.js. It lets users search and buy and sell products, with a fast and smooth user experience. It uses REST APIs,Redux.js, and CSS to create a dynamic, interactive, and responsive web site. Byapar showcases my skills and knowledge in full-stack web development, JavaScript frameworks, and web applications.
-        `,
-        link:'https://some-coder-whowantstocode.github.io/byapar/#/login'
-      },
-        {name:"TMDB",
-        image:movie,
-        type:["FRONTEND","ALL","REACTJS"],
-        description:`
-        MovieDB is a web application that I created using React.js,and CSS. It lets users search and explore details related to any movie and TV series, such as genres, ratings, reviews, cast, crew, trailers, etc. It uses TMDB API to deliver a fast and smooth user experience. MovieDB showcases my skills and knowledge in front-end web development, JavaScript frameworks, and responsive web design.
-        `,
-        link:'https://some-coder-whowantstocode.github.io/tmdbclone/#/'
-      },
-      {name:"Instant Group",
+      {name:"Instant Chat",
         image:chatapp,
         type:["FULLSTACK","ALL","REACTJS"],
-        description:`Instant Chat is a real-time chat application that leverages the power of the MERN stack (MongoDB, Express.js, React, Node.js) and Socket.IO also it uses jest for writing test cases. One of the unique features of Instant Chat is its transient nature - it does not use a database, ensuring that no chat data persists once the session ends. This design choice prioritizes user privacy and makes each chat session a unique experience. The application allows users to create chat rooms and handles all edge cases to ensure a smooth and enjoyable user experience.
+        description:`Instant Chat is a real-time chat application that leverages the power of the MERN stack and Socket.IO. One of the unique features of Instant Chat is its transient nature - it does not use a database, ensuring that no chat data persists once the session ends. This design choice prioritizes user privacy and makes each chat session a unique experience.
         `,
-        link:'https://instant-chat-ay6x.onrender.com/'
+        link:'https://instant-chat-ay6x.onrender.com/',
+        github:'https://github.com/some-coder-whowantstocode/chat-app'
       },
     ]
     
@@ -197,6 +171,7 @@ const Projects = () => {
           isvisible={a.type.find(e=>e==current) } 
           description={a.description}
           link={a.link}
+          github={a.github}
           />
         </motion.div>
       )
@@ -257,14 +232,14 @@ const Projects = () => {
             ALL
             </li>
 
-            <li 
+            {/* <li 
 
             ref={jsref} 
             onClick={e=>changepos(e,"FRONTEND")} 
             className='relative py-1 px-2 text-sm cursor-pointer'
             >
             FRONTEND
-            </li>
+            </li> */}
 
             <li 
             ref={jsref} 
@@ -307,6 +282,7 @@ const Projects = () => {
           isvisible={a.type.find(e=>e==current) } 
           description={a.description}
           link={a.link}
+          github={a.github}
           />
         </div>
       )

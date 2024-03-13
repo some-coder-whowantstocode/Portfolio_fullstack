@@ -54,6 +54,8 @@ console.log(load)
       setload(false)
       return;
     }
+    
+    // https://portfolio-backend-bfn9.onrender.com/sendmail
     try{
      await fetch('http://localhost:9310/sendmail', {
         method: 'POST',
