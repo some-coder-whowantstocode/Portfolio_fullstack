@@ -7,7 +7,7 @@ import Link from './Link';
 const Links = () => {
 
   const Icons = [
-    {link:"https://www.linkedin.com/in/rohit-bal-8a352b236/",icon:AiOutlineLinkedin},
+    {link:"https://www.linkedin.com/in/rohit-bal-9569b2321/",icon:AiOutlineLinkedin},
     {link:"https://github.com/some-coder-whowantstocode",icon:FaGithub},
     {link:"https://www.instagram.com/rohitbal216/",icon:BsInstagram}
   ];

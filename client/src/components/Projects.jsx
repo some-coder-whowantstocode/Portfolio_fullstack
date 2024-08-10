@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Project from '../ComponentParts/ProjectComponent/Project'
 import chatapp from '../assets/chat-app.jpeg'
+import canvas from '../assets/canvas.jpg'
 import { AnimatePresence,motion} from 'framer-motion'
 import { Animationleft } from '../utils/Animations'
 import { PROJECT, Responsive } from '../Store'
@@ -43,6 +44,14 @@ const Projects = () => {
         link:'https://instant-chat-ay6x.onrender.com/',
         github:'https://github.com/some-coder-whowantstocode/chat-app'
       },
+      {name:"Whiteboard",
+        image:canvas,
+        type:["FULLSTACK","ALL","REACTJS"],
+        description:`I am still working on this project. WhiteBoard is a full-stack web application designed to facilitate real-time drawing and collaboration. Built using the MERN stack (MongoDB, Express.js, React, Node.js), it provides a seamless and interactive platform for users to brainstorm, create, and share ideas visually.
+        `,
+        link:'https://white-board-d5cn.onrender.com',
+        github:'https://github.com/some-coder-whowantstocode/white_board/tree/change1'
+      }
     ]
     
  
@@ -143,8 +152,6 @@ const Projects = () => {
             >
             REACTJS
             </motion.li>
-
-          
 
         </ul>
 

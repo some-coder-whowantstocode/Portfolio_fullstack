@@ -52,7 +52,7 @@ const Projectinfo = ({props}) => {
             
       <img 
       src={props.image} 
-      className='w-full h-2/3 border border-b-4 border-black' 
+      className='w-full h-2/3 border border-b-4 border-black ' 
       alt="" />
       <p
       className=' text-2xl text-gray-700 m-3 font-bold '
