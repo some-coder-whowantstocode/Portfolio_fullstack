@@ -59,21 +59,20 @@ const Contact = () => {
       const data = await fetch("https://portfolio-fullstack-2m4q.onrender.com/sendmail", {
         method: 'POST',
         headers: {
-          // 'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin':"https://protfolio-zu32.onrender.com/"
+          'Content-Type': 'application/json',
+          // 'Access-Control-Allow-Origin':"https://protfolio-zu32.onrender.com/"
         },
         body: JSON.stringify(formData),
       });
       setload(false)
+      console.log(data)
       if(data.status !== 200){
         throw Error(data);
       }
-      console.log(data)
       setm('Mail deliverd successfully.')
       setmr('green')
       setrm(true);
     } catch (err) {
-      console.log(load)
       setload(false)
       setm('Mail failed to deliver.')
       setmr('red')
