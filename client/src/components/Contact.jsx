@@ -54,9 +54,9 @@ const Contact = () => {
       return;
     }
 
-    // https://portfolio-backend-bfn9.onrender.com/sendmail
+    // https://portfolio-fullstack-2m4q.onrender.com/sendmail
     try {
-      const data = await fetch('https://portfolio-backend-bfn9.onrender.com/sendmail', {
+      const data = await fetch(process.env.REACT_APP_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
