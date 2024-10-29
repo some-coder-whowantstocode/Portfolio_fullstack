@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { AnimatePresence,motion } from 'framer-motion';
 import { Responsive } from '../../Store';
+import { v4 } from 'uuid';
 
 const Skill = ({name,mastery }) => {
     const h = 2;
@@ -22,8 +23,11 @@ const Skill = ({name,mastery }) => {
       innerWidth >Responsive.width
       ?
       <AnimatePresence>
-      <motion.div className='flex'>
+      <motion.div className='flex'
+      key={v4()}
+      >
       <motion.div
+      key={v4()}
       style={{
           height:`${h}rem`,
       }}
@@ -33,6 +37,7 @@ const Skill = ({name,mastery }) => {
       </motion.div>
 
       <motion.div
+      key={v4()}
       ref={totalref}
         style={{
           height:`${h}rem`,
@@ -40,6 +45,7 @@ const Skill = ({name,mastery }) => {
       className=' relative w-full bg-gray-300'
       >
         <motion.div 
+      key={v4()}
         style={{
           height:h+"rem"
         }}

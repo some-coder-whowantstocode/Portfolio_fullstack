@@ -1,17 +1,17 @@
 import React from 'react'
-import { FaFacebookF, FaGithub } from "react-icons/fa";
-import { BsInstagram } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import Link from './Link';
+import { FaXTwitter } from "react-icons/fa6";
+import {v4 as uuidv4} from 'uuid';
 
 const Links = () => {
 
   const Icons = [
     {link:"https://www.linkedin.com/in/rohit-bal-9569b2321/",icon:AiOutlineLinkedin},
     {link:"https://github.com/some-coder-whowantstocode",icon:FaGithub},
-    {link:"https://www.instagram.com/rohitbal216/",icon:BsInstagram}
+    {link:"https://x.com/adevthatcreates",icon:FaXTwitter}
   ];
-  console.log(Icons)
 
   return (
 
@@ -19,7 +19,7 @@ const Links = () => {
 
   {
     Icons.map((i)=>(
-      <Link  LINK={i.link} ICON ={i.icon}/>
+      <Link key={uuidv4()}  LINK={i.link} ICON ={i.icon}/>
     ))
   }
 

@@ -3,6 +3,7 @@ import me from '../../assets/me.webp'
 import { Responsive } from '../../Store'
 import { AnimatePresence,motion } from 'framer-motion'
 import { Animationleft, projectanimation } from '../../utils/Animations'
+import { v4 } from 'uuid'
 
 const Me = () => {
   return (
@@ -15,14 +16,14 @@ const Me = () => {
     className='mt-8 w-ibox flex flex-col items-center justify-center'
     >
       <img
-      key={'i'}
+      key={v4()}
       className=' mb-4 w-pimg '
       src={me} 
       alt="" 
       />
 
     <motion.p
-    key={'p'}
+    key={v4()}
       {...Animationleft(-100,0,0.6)}
 
     className='mb-4 font-serif text-gray-700'
