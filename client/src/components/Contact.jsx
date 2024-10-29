@@ -60,6 +60,7 @@ const Contact = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin':"https://protfolio-zu32.onrender.com/"
         },
         body: JSON.stringify(formData),
       });
