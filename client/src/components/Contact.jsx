@@ -59,7 +59,7 @@ const Contact = () => {
       const data = await fetch("https://portfolio-fullstack-2m4q.onrender.com/sendmail", {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          // 'Content-Type': 'application/json',
           'Access-Control-Allow-Origin':"https://protfolio-zu32.onrender.com/"
         },
         body: JSON.stringify(formData),

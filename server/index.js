@@ -47,7 +47,7 @@ app.post('/sendmail', async (req, res) => {
       { 
         return res.status(400).send({ error: 'Invalid data' }); 
       }
-    await sendmail(subject, message, sender);
+    sendmail(subject, message, sender);
     res.status(200).send('Email sent.');
   } catch (err) {
     console.log(err);
