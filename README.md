@@ -1,6 +1,10 @@
 # Full-Stack Portfolio Project
 
+
 This is a full-stack portfolio project built with Vite.
+
+> <span style="color:#6A2222;">This app is hosted with free hosting from render which takes 50 seconds to spin off the server and keeps alive for 15 mins so please wait.</span>
+
 Live link : https://protfolio-zu32.onrender.com/
 
 ## Technologies Used
